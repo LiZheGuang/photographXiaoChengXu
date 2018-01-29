@@ -1,0 +1,22 @@
+ <!--上传图片  -->
+  <view class='up_imgbox'>
+
+    <!-- <image mode='aspectFill' src='http://test.wwcdn.cn/mpb_tianjia.jpg' bindtap='pj_imgshow'></image> -->
+    <block wx:for="{{pics}}">
+      <view class='show_img_view'>
+        <view class='over' data-id = "{{index}}" bindtap='remove'>X</view>
+        
+                <view class='jindu' hidden='{{hrefs[index] != null}}'>上传中</view>
+
+        <image mode='aspectFill' src='{{item.url}}' ></image>
+      </view>
+
+    </block>
+
+    <view class='show_img_view' wx:if="{{pics.length < shopImgNumber}}">
+
+      <image mode='aspectFill' src='http://test.wwcdn.cn/mpb_tianjia.jpg' bindtap='pj_imgshow'></image>
+    </view>
+
+  </view>
+  <!--上传图片  -->
